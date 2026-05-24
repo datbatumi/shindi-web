@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ბლოგი — შინდი | ციფრული მარკეტინგი ბათუმში</title>
+    <meta name="description" content="შინდის ბლოგი — ციფრული მარკეტინგის სტატიები, ბრენდინგის გზამკვლევები, SEO, სოციალური მედია და ბიზნეს სტრატეგია.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.shindi.ge/blog.html">
+    <meta property="og:type"  content="website">
+    <meta property="og:title" content="ბლოგი — შინდი">
+    <meta property="og:description" content="ციფრული მარკეტინგის სტატიები ბათუმური გამოცდილებით.">
+    <meta property="og:image" content="https://www.shindi.ge/Assests/Branding/og-image.png">
+    <meta name="theme-color" content="#E42C42">
+    <link rel="icon" type="image/svg+xml" href="Assests/Branding/logo.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="is-loading">
+
+<!-- LOADER -->
+<div id="loader" role="status" aria-label="იტვირთება">
+    <div class="loader-content">
+        <img src="Assests/Branding/logo.svg" alt="შინდი" class="loader-logo-img">
+        <p class="loader-tagline">11 წელი ბიზნესების გვერდით</p>
+    </div>
+</div>
+
+<!-- NAV OVERLAY -->
+<div id="navOverlay" class="nav-overlay" role="dialog" aria-label="ნავიგაცია">
+
+    <!-- Animated blob background -->
+    <div class="overlay-blob" aria-hidden="true"></div>
+
+    <div class="overlay-top">
+        <a href="index.html" class="overlay-logo"><img src="Assests/Branding/logo.svg" alt="შინდი"></a>
+        <div class="overlay-top-actions">
+            <button class="overlay-close" id="overlayClose" aria-label="დახურვა">✕</button>
+        </div>
+    </div>
+
+    <button class="lang-switch" id="langSwitch" aria-label="Switch language">English</button>
+
+    <nav class="overlay-nav">
+        <ul>
+            <li><a href="index.html">მთავარი <span class="nav-arrow">↗</span></a></li>
+            <li><a href="services.html">სერვისები <span class="nav-arrow">↗</span></a></li>
+            <li><a href="portfolio.html">ნამუშევრები <span class="nav-arrow">↗</span></a></li>
+            <li><a href="about.html">ჩვენ შესახებ <span class="nav-arrow">↗</span></a></li>
+            <li><a href="blog.html" class="active-nav">ბლოგი <span class="nav-arrow">↗</span></a></li>
+            <li><a href="contact.html">კონტაქტი <span class="nav-arrow">↗</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="overlay-footer">
+        <div class="overlay-contact-item"><a href="tel:+995510102050">+995 510 10 20 50</a></div>
+        <div class="overlay-contact-item"><a href="mailto:contact@shindi.ge">contact@shindi.ge</a></div>
+        <nav class="overlay-socials" aria-label="სოციალური ქსელები">
+            <a href="https://www.facebook.com/shindi.ge" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/shindi.ge" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/shindi/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+        </nav>
+    </div>
+</div>
+
+<!-- HIRE MODAL -->
+<div id="hireModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="გაგვესაუბრეთ">
+    <div class="modal-card">
+        <button class="modal-close-btn" id="modalClose" aria-label="დახურვა">✕</button>
+        <h2 class="modal-title">გაგვესაუბრეთ</h2>
+        <p class="modal-sub">შეავსეთ ფორმა — ჩვენი გუნდი მალე დაგიკავშირდებათ.</p>
+        <form id="hireForm" action="#" method="POST" novalidate>
+            <input type="hidden" name="_hp" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="form-row"><label for="h-name">სახელი *</label><input type="text" id="h-name" name="name" placeholder="თქვენი სახელი" required autocomplete="name"></div>
+            <div class="form-row"><label for="h-phone">ტელეფონი *</label><input type="tel" id="h-phone" name="phone" placeholder="+995 5XX XX XX XX" required autocomplete="tel"></div>
+            <div class="form-row"><label for="h-email">ელ-ფოსტა</label><input type="email" id="h-email" name="email" placeholder="your@email.com" autocomplete="email"></div>
+            <div class="form-row">
+                <label for="h-service">სასურველი სერვისი</label>
+                <select id="h-service" name="service">
+                    <option value="">— აირჩიეთ —</option>
+                    <option>სტრატეგია</option><option>ბრენდინგი</option>
+                    <option>შეფუთვა და დიზაინი</option><option>სოციალური მედია მარკეტინგი</option>
+                    <option>საძიებო სისტემის მარკეტინგი</option><option>ვებგვერდის დამზადება</option>
+                    <option>მობილური აპლიკაცია</option><option>ბიზნესის გაციფრულება</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">
+                <span class="btn-label">გაგზავნა</span>
+                <svg class="btn-spinner" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,.3)" stroke-width="2"/><path d="M9 2a7 7 0 0 1 7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </form>
+        <div class="form-success" id="hireFormSuccess">
+            <svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="25" stroke="#22c55e" stroke-width="2"/><path d="M14 26l8 8 16-16" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p>გმადლობთ!<br>ჩვენი გუნდი მალე დაგიკავშირდებათ.</p>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+    <div class="header-inner">
+        <a href="index.html" class="header-logo" aria-label="შინდი — მთავარი"><img src="Assests/Branding/logo.svg" alt="შინდი"></a>
+        <span class="header-tagline">11 წელი ბიზნესების გვერდით</span>
+        <div class="header-actions">
+            <button class="hire-btn" data-hire aria-haspopup="dialog">გაგვესაუბრე <em class="arr">→</em></button>
+            <button class="burger-circle" id="mainBurger" aria-label="მენიუ" aria-expanded="false" aria-controls="navOverlay"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- ════ HERO ═════════════════════════════════════════════════ -->
+    <section class="pg-hero blog-hero" aria-label="ბლოგი">
+        <div class="pg-hero-inner">
+            <span class="pg-tag">ბლოგი · ციფრული მარკეტინგი</span>
+            <h1 class="pg-title">
+                გაეცანით<br>
+                <span class="t-red" id="blogWord">სიახლეებს</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- ════ FEATURED POST ══════════════════════════════════════ -->
+    <section class="blog-featured-section" aria-label="გამორჩეული სტატია">
+        <div class="blog-featured-inner" id="blogFeatured">
+            <!-- JS injected -->
+        </div>
+    </section>
+
+    <!-- ════ POST GRID ══════════════════════════════════════════ -->
+    <section class="blog-grid-section" aria-label="სტატიები">
+        <div class="blog-grid-inner">
+            <p class="port-count" id="blogCount">6 სტატია</p>
+            <div class="blog-grid" id="blogGrid">
+                <!-- JS injected -->
+            </div>
+            <!-- Pager -->
+            <div class="pager" id="blogPager" style="display:none;">
+                <button class="pager-btn" id="blogPrev" aria-label="წინა">←</button>
+                <span class="pager-info" id="blogPagerInfo"></span>
+                <button class="pager-btn" id="blogNext" aria-label="შემდეგი">→</button>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+<!-- FOOTER -->
+<footer id="footer">
+    <div class="footer-blob" aria-hidden="true"></div>
+    <div class="footer-cols">
+        <div class="footer-brand footer-col">
+            <h5>კონტაქტი</h5>
+            <ul>
+                <li><a href="tel:+995510102050">+995 510 10 20 50</a></li>
+                <li><a href="mailto:contact@shindi.ge">contact@shindi.ge</a></li>
+                <li><span>ზ. გორგილაძის ქ. 59, ბათუმი</span></li>
+                <li><a href="https://www.shindi.ge" target="_blank" rel="noopener">shindi.ge</a></li>
+            </ul>
+            <nav class="footer-socials" aria-label="სოციალური ქსელები">
+                <a href="https://www.facebook.com/shindi.ge" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                <a href="https://www.instagram.com/shindi.ge" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+                <a href="https://www.linkedin.com/company/shindi/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            </nav>
+        </div>
+        <div class="footer-col">
+            <h5>ნავიგაცია</h5>
+            <ul>
+                <li><a href="services.html">სერვისები</a></li>
+                <li><a href="portfolio.html">ნამუშევრები</a></li>
+                <li><a href="about.html">ჩვენ შესახებ</a></li>
+                <li><a href="blog.html">ბლოგი</a></li>
+                <li><a href="contact.html">კონტაქტი</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h5>სერვისები</h5>
+            <ul>
+                <li><a href="service.html?s=strategia">სტრატეგია</a></li>
+                <li><a href="service.html?s=branding">ბრენდინგი</a></li>
+                <li><a href="service.html?s=sheputva">შეფუთვა და დიზაინი</a></li>
+                <li><a href="service.html?s=social-media">სოციალური მედია</a></li>
+                <li><a href="service.html?s=seo">საძიებო სისტემის მარკეტინგი</a></li>
+                <li><a href="service.html?s=website">ვებგვერდის დამზადება</a></li>
+                <li><a href="service.html?s=app">მობილური აპლიკაცია</a></li>
+                <li><a href="service.html?s=digitalizacia">ბიზნესის გაციფრულება</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h5>დაგვიკავშირდი</h5>
+            <ul>
+                <li><a href="tel:+995510102050">+995 510 10 20 50</a></li>
+                <li><a href="mailto:contact@shindi.ge">contact@shindi.ge</a></li>
+                <li><a href="contact.html">კონტაქტის გვერდი →</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-end">
+        <a href="index.html" class="footer-end-logo" aria-label="შინდი">
+            <img src="Assests/Branding/logo.svg" alt="შინდი">
+        </a>
+        <div class="footer-end-right">
+            <span class="footer-tagline">ციფრული მარკეტინგი · ბათუმი · 2015</span>
+            <span class="footer-copy">&copy; <span id="year"></span> შინდი. ყველა უფლება დაცულია.</span>
+        </div>
+        <button class="scroll-top-btn" id="scrollTopBtn" aria-label="ზემოთ">
+            <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</footer>
+
+<!-- GIFT MODAL -->
+<div id="giftModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="დაფინანსება">
+    <div class="modal-card">
+        <button class="modal-close-btn" id="giftClose" aria-label="დახურვა">✕</button>
+        <p class="modal-eyebrow">🎁 შენთვის საჩუქარი მაქვს</p>
+        <h2 class="modal-title">მიიღე 25 000 ლარიანი დაფინანსება<br>აწარმოე საქართველოს ფარგლებში!</h2>
+        <p class="modal-sub">შეავსე ფორმა და გაიგე როგორ მიიღო დაფინანსება:</p>
+        <form id="giftForm" action="#" method="POST" novalidate>
+            <input type="hidden" name="_hp" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="form-row">
+                <label for="g-name">სახელი *</label>
+                <input type="text" id="g-name" name="name" placeholder="თქვენი სახელი" required autocomplete="name">
+            </div>
+            <div class="form-row">
+                <label for="g-phone">ტელეფონი *</label>
+                <input type="tel" id="g-phone" name="phone" placeholder="+995 5XX XX XX XX" required autocomplete="tel">
+            </div>
+            <div class="form-row">
+                <label for="g-email">ელ-ფოსტა *</label>
+                <input type="email" id="g-email" name="email" placeholder="your@email.com" required autocomplete="email">
+            </div>
+            <div class="form-row">
+                <label for="g-web">კომპანიის ვებ / Facebook</label>
+                <input type="url" id="g-web" name="website" placeholder="https://...">
+            </div>
+            <div class="form-row">
+                <label for="g-revenue">კომპანიის ბრუნვა გასული 12 თვის განმავლობაში</label>
+                <select id="g-revenue" name="revenue">
+                    <option value="">— აირჩიეთ —</option>
+                    <option value="under-30k">30 000 ლარზე ნაკლები</option>
+                    <option value="under-500k">500 000 ლარზე ნაკლები</option>
+                    <option value="under-2mln">2 მლნ ლარზე ნაკლები</option>
+                    <option value="over-2mln">2 მლნ ლარზე მეტი</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">
+                <span class="btn-label">გაგზავნა</span>
+                <svg class="btn-spinner" viewBox="0 0 18 18" fill="none">
+                    <circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+                    <path d="M9 2a7 7 0 0 1 7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </form>
+        <div class="form-success" id="giftFormSuccess">
+            <svg viewBox="0 0 52 52" fill="none">
+                <circle cx="26" cy="26" r="25" stroke="#22c55e" stroke-width="2"/>
+                <path d="M14 26l8 8 16-16" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p>თქვენი მოთხოვნა მიღებულია.<br>მალე დაგიკავშირდებით.</p>
+        </div>
+    </div>
+</div>
+
+<!-- FLOATING GIFT BUTTON -->
+<button class="float-gift" data-gift aria-label="შენთვის საჩუქარი მაქვს">
+    <span class="gift-icon">🎁</span>
+    <span>შენთვის საჩუქარი მაქვს</span>
+</button>
+
+<!-- ═══════════════════════════════════════════════════════════
+     QUIZ POPUP MODAL
+════════════════════════════════════════════════════════════ -->
+<div id="quizModal" class="quiz-backdrop" role="dialog" aria-modal="true" aria-label="უფასო კონსულტაცია">
+    <div class="quiz-card">
+
+        <!-- Close -->
+        <button class="quiz-close" id="quizClose" aria-label="დახურვა">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <!-- Star progress -->
+        <div class="quiz-stars" aria-label="პროგრესი">
+            <span class="quiz-star" aria-hidden="true">★</span>
+            <span class="quiz-star" aria-hidden="true">★</span>
+            <span class="quiz-star" aria-hidden="true">★</span>
+            <span class="quiz-star" aria-hidden="true">★</span>
+            <span class="quiz-star" aria-hidden="true">★</span>
+        </div>
+
+        <p class="quiz-headline">უპასუხე რამოდენიმე შეკითხვას და მიიღე<br><strong>უფასო კონსულტაცია</strong></p>
+
+        <!-- ── STEP 1 ── სფერო (single choice) -->
+        <div class="quiz-step active" data-step="1">
+            <p class="quiz-q"><span class="quiz-step-num">1 / 5</span> რომელ სფეროს წარმოადგენთ?</p>
+            <div class="qc-grid">
+                <button class="qc-btn qc-single" data-val="უძრავი ქონება"><span class="qc-ind"></span><span class="qc-label">🏠 უძრავი ქონება</span></button>
+                <button class="qc-btn qc-single" data-val="ტურიზმი"><span class="qc-ind"></span><span class="qc-label">✈️ ტურიზმი</span></button>
+                <button class="qc-btn qc-single" data-val="ვაჭრობა"><span class="qc-ind"></span><span class="qc-label">🛍️ ვაჭრობა</span></button>
+                <button class="qc-btn qc-single" data-val="მომსახურება"><span class="qc-ind"></span><span class="qc-label">💼 მომსახურება</span></button>
+                <button class="qc-btn qc-single qc-other-trigger" data-val="სხვა"><span class="qc-ind"></span><span class="qc-label">✏️ სხვა</span></button>
+            </div>
+            <input class="quiz-other-field" type="text" placeholder="მიუთითე სფერო..." style="display:none">
+            <button class="quiz-next-btn" style="display:none">შემდეგი →</button>
+        </div>
+
+        <!-- ── STEP 2 ── სერვისი (single choice) -->
+        <div class="quiz-step" data-step="2">
+            <button class="quiz-back-btn" data-back>← უკან</button>
+            <p class="quiz-q"><span class="quiz-step-num">2 / 5</span> რომელი სერვისი გესაჭიროებათ?</p>
+            <div class="qc-grid">
+                <button class="qc-btn qc-single" data-val="სტრატეგია"><span class="qc-ind"></span><span class="qc-label">📊 სტრატეგია</span></button>
+                <button class="qc-btn qc-single" data-val="ბრენდინგი"><span class="qc-ind"></span><span class="qc-label">🎨 ბრენდინგი</span></button>
+                <button class="qc-btn qc-single" data-val="სოც. მედია"><span class="qc-ind"></span><span class="qc-label">📱 სოც. მედია</span></button>
+                <button class="qc-btn qc-single" data-val="ვებგვერდი"><span class="qc-ind"></span><span class="qc-label">🌐 ვებგვერდი</span></button>
+                <button class="qc-btn qc-single" data-val="აპლიკაცია"><span class="qc-ind"></span><span class="qc-label">📲 აპლიკაცია</span></button>
+                <button class="qc-btn qc-single" data-val="ყველა"><span class="qc-ind"></span><span class="qc-label">✨ ყველა</span></button>
+            </div>
+            <button class="quiz-next-btn" style="display:none">შემდეგი →</button>
+        </div>
+
+        <!-- ── STEP 3 ── კომპანია -->
+        <div class="quiz-step" data-step="3">
+            <button class="quiz-back-btn" data-back>← უკან</button>
+            <p class="quiz-q"><span class="quiz-step-num">3 / 5</span> თქვენი კომპანიის დასახელება ან ბმული</p>
+            <input class="quiz-input" type="text" placeholder="სახელი, Facebook ბმული ან ვებგვერდი" autocomplete="off" required>
+            <p class="quiz-field-err" style="display:none">⚠ გთხოვთ შეავსოთ ეს ველი</p>
+            <button class="quiz-next-btn">შემდეგი →</button>
+        </div>
+
+        <!-- ── STEP 4 ── ტელეფონი -->
+        <div class="quiz-step" data-step="4">
+            <button class="quiz-back-btn" data-back>← უკან</button>
+            <p class="quiz-q"><span class="quiz-step-num">4 / 5</span> მიუთითეთ თქვენი ტელეფონი</p>
+            <input class="quiz-input" type="tel" placeholder="510 10 20 50" autocomplete="tel" required>
+            <p class="quiz-field-err" style="display:none">⚠ გთხოვთ შეიყვანოთ ტელეფონის ნომერი</p>
+            <button class="quiz-next-btn">შემდეგი →</button>
+        </div>
+
+        <!-- ── STEP 5 ── მოლოდინი (single choice) -->
+        <div class="quiz-step" data-step="5">
+            <button class="quiz-back-btn" data-back>← უკან</button>
+            <p class="quiz-q"><span class="quiz-step-num">5 / 5</span> როგორი მომსახურების მოლოდინი გაქვთ?</p>
+            <div class="qc-grid qc-grid--col1">
+                <button class="qc-btn qc-single" data-val="სწრაფად, იაფად და ხარისხიანად"><span class="qc-ind"></span><span class="qc-label">⚡ სწრაფად, იაფად და ხარისხიანად</span></button>
+                <button class="qc-btn qc-single" data-val="თანადაფინანსებით (აწარმოე საქართველოში)"><span class="qc-ind"></span><span class="qc-label">🤝 თანადაფინანსებით (აწარმოე საქართველოში)</span></button>
+                <button class="qc-btn qc-single" data-val="მხოლოდ პრემიუმ ხარისხით"><span class="qc-ind"></span><span class="qc-label">💎 მხოლოდ პრემიუმ ხარისხით</span></button>
+            </div>
+        </div>
+
+        <!-- ── SUCCESS SCREEN ── -->
+        <div class="quiz-success" id="quizSuccess">
+            <div class="quiz-success-stars">
+                <span class="qs-star">★</span>
+                <span class="qs-star">★</span>
+                <span class="qs-star">★</span>
+                <span class="qs-star">★</span>
+                <span class="qs-star">★</span>
+            </div>
+            <p class="quiz-success-msg">წარმატება გზაშია,<br>ჩვენი მენეჯერი მალე დაგიკავშირდებათ</p>
+            <button class="quiz-success-close" id="quizSuccessClose">დახურვა</button>
+        </div>
+
+    </div><!-- /.quiz-card -->
+</div><!-- /#quizModal -->
+
+<script src="js/blog-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function () {
+    'use strict';
+
+    function initPage(SHINDI_BLOG) {
+    var GRID_PER_PAGE = 4;
+    var currentPage   = 1;
+    var gridPosts     = SHINDI_BLOG.slice(1); /* all except featured */
+
+    /* ── Featured post ── */
+    var featured = SHINDI_BLOG[0];
+    var featEl   = document.getElementById('blogFeatured');
+    featEl.innerHTML =
+        '<a class="blog-feat-card" href="blog-single.html?p=' + featured.slug + '">' +
+            '<div class="blog-feat-img-wrap">' +
+                '<img src="' + featured.featured + '" alt="' + featured.title + '" loading="eager">' +
+            '</div>' +
+            '<div class="blog-feat-body">' +
+                '<span class="blog-cat-pill">' + featured.catLabel + '</span>' +
+                '<h2 class="blog-feat-title">' + featured.title + '</h2>' +
+                '<p class="blog-feat-excerpt">' + featured.excerpt + '</p>' +
+                '<span class="blog-read-more">სტატიის წაკითხვა →</span>' +
+            '</div>' +
+        '</a>';
+
+    var grid      = document.getElementById('blogGrid');
+    var pagerEl   = document.getElementById('blogPager');
+    var prevBtn   = document.getElementById('blogPrev');
+    var nextBtn   = document.getElementById('blogNext');
+    var pagerInfo = document.getElementById('blogPagerInfo');
+
+    function buildGrid() {
+        var totalPages = Math.max(1, Math.ceil(gridPosts.length / GRID_PER_PAGE));
+        if (currentPage > totalPages) currentPage = totalPages;
+
+        var start = (currentPage - 1) * GRID_PER_PAGE;
+        var page  = gridPosts.slice(start, start + GRID_PER_PAGE);
+
+        grid.innerHTML = '';
+        page.forEach(function (post) {
+            var card = document.createElement('a');
+            card.className = 'blog-card';
+            card.href = 'blog-single.html?p=' + post.slug;
+            card.innerHTML =
+                '<div class="blog-card-img-wrap">' +
+                    '<img src="' + post.featured + '" alt="' + post.title + '" loading="lazy">' +
+                '</div>' +
+                '<div class="blog-card-body">' +
+                    '<span class="blog-cat-pill blog-cat-pill--sm">' + post.catLabel + '</span>' +
+                    '<h3 class="blog-card-title">' + post.title + '</h3>' +
+                    '<p class="blog-card-excerpt">' + post.excerpt + '</p>' +
+                '</div>';
+            grid.appendChild(card);
+        });
+
+        document.getElementById('blogCount').textContent = SHINDI_BLOG.length + ' სტატია';
+
+        if (totalPages > 1) {
+            pagerEl.style.display = 'flex';
+            pagerInfo.textContent = currentPage + ' / ' + totalPages;
+            prevBtn.disabled = (currentPage === 1);
+            nextBtn.disabled = (currentPage === totalPages);
+        } else {
+            pagerEl.style.display = 'none';
+        }
+    }
+
+    buildGrid();
+
+    prevBtn.addEventListener('click', function () {
+        if (currentPage > 1) { currentPage--; buildGrid(); window.scrollTo({ top: grid.offsetTop - 120, behavior: 'smooth' }); }
+    });
+    nextBtn.addEventListener('click', function () {
+        var total = Math.ceil(gridPosts.length / GRID_PER_PAGE);
+        if (currentPage < total) { currentPage++; buildGrid(); window.scrollTo({ top: grid.offsetTop - 120, behavior: 'smooth' }); }
+    });
+    } /* end initPage */
+
+    if (window.SHINDI_BLOG_READY) {
+        initPage(window.SHINDI_BLOG);
+    } else {
+        document.addEventListener('shindiBlogReady', function (e) {
+            initPage(e.detail);
+        });
+    }
+})();
+</script>
+
+</body>
+</html>

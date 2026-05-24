@@ -1,0 +1,746 @@
+﻿<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title id="metaTitle">ნამუშევრები - შინდი | ციფრული მარკეტინგული კომპანია</title>
+    <meta name="description"  id="metaDesc"   content="შინდის პორტფოლიო - ციფრული მარკეტინგული კომპანია ბათუმში.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical"     id="metaCanon"  href="https://www.shindi.ge/portfolio-detail.html">
+    <meta property="og:type"  content="website">
+    <meta property="og:url"   id="metaOgUrl"  content="https://www.shindi.ge/portfolio-detail.html">
+    <meta property="og:title" id="metaOgTitle" content="ნამუშევარი — შინდი">
+    <meta property="og:description" id="metaOgDesc" content="შინდის პორტფოლიო — ციფრული მარკეტინგი ბათუმში.">
+    <meta property="og:image" id="metaOgImg"  content="https://www.shindi.ge/Assests/Hero/9.jpg">
+    <meta name="theme-color"  content="#E42C42">
+    <link rel="icon" type="image/svg+xml" href="Assests/Branding/logo.svg">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="is-loading">
+
+<!-- LOADER -->
+<div id="loader" role="status" aria-label="იტვირთება">
+    <div class="loader-content">
+        <img src="Assests/Branding/logo.svg" alt="შინდი" class="loader-logo-img">
+        <p class="loader-tagline">11 წელი ბიზნესების გვერდით</p>
+    </div>
+</div>
+
+<!-- NAV OVERLAY -->
+<div id="navOverlay" class="nav-overlay" role="dialog" aria-label="ნავიგაცია">
+
+    <!-- Animated blob background -->
+    <div class="overlay-blob" aria-hidden="true"></div>
+
+    <div class="overlay-top">
+        <a href="index.html" class="overlay-logo"><img src="Assests/Branding/logo.svg" alt="შინდი"></a>
+        <div class="overlay-top-actions">
+            <button class="overlay-close" id="overlayClose" aria-label="დახურვა">✕</button>
+        </div>
+    </div>
+
+    <button class="lang-switch" id="langSwitch" aria-label="Switch language">English</button>
+
+    <nav class="overlay-nav">
+        <ul>
+            <li><a href="index.html">მთავარი <span class="nav-arrow">↗</span></a></li>
+            <li><a href="services.html">სერვისები <span class="nav-arrow">↗</span></a></li>
+            <li><a href="portfolio.html" class="active-nav">ნამუშევრები <span class="nav-arrow">↗</span></a></li>
+            <li><a href="about.html">ჩვენ შესახებ <span class="nav-arrow">↗</span></a></li>
+            <li><a href="blog.html">ბლოგი <span class="nav-arrow">↗</span></a></li>
+            <li><a href="contact.html">კონტაქტი <span class="nav-arrow">↗</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="overlay-footer">
+        <div class="overlay-contact-item"><a href="tel:+995510102050">+995 510 10 20 50</a></div>
+        <div class="overlay-contact-item"><a href="mailto:contact@shindi.ge">contact@shindi.ge</a></div>
+        <nav class="overlay-socials" aria-label="სოციალური ქსელები">
+            <a href="https://www.facebook.com/shindi.ge" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/shindi.ge" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/shindi/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+        </nav>
+    </div>
+</div>
+
+<!-- HIRE MODAL -->
+<div id="hireModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="გაგვესაუბრეთ">
+    <div class="modal-card">
+        <button class="modal-close-btn" id="modalClose" aria-label="დახურვა">✕</button>
+        <h2 class="modal-title">გაგვესაუბრეთ</h2>
+        <p class="modal-sub">შეავსეთ ფორმა — ჩვენი გუნდი მალე დაგიკავშირდებათ.</p>
+        <form id="hireForm" action="#" method="POST" novalidate>
+            <input type="hidden" name="_hp" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="form-row"><label for="h-name">სახელი *</label><input type="text" id="h-name" name="name" placeholder="თქვენი სახელი" required autocomplete="name"></div>
+            <div class="form-row"><label for="h-phone">ტელეფონი *</label><input type="tel" id="h-phone" name="phone" placeholder="+995 5XX XX XX XX" required autocomplete="tel"></div>
+            <div class="form-row"><label for="h-email">ელ-ფოსტა</label><input type="email" id="h-email" name="email" placeholder="your@email.com" autocomplete="email"></div>
+            <div class="form-row">
+                <label for="h-service">სასურველი სერვისი</label>
+                <select id="h-service" name="service">
+                    <option value="">— აირჩიეთ —</option>
+                    <option>სტრატეგია</option><option>ბრენდინგი</option>
+                    <option>შეფუთვა და დიზაინი</option><option>სოციალური მედია მარკეტინგი</option>
+                    <option>საძიებო სისტემის მარკეტინგი</option><option>ვებგვერდის დამზადება</option>
+                    <option>მობილური აპლიკაცია</option><option>ბიზნესის გაციფრულება</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">
+                <span class="btn-label">გაგზავნა</span>
+                <svg class="btn-spinner" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,.3)" stroke-width="2"/><path d="M9 2a7 7 0 0 1 7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </form>
+        <div class="form-success" id="hireFormSuccess">
+            <svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="25" stroke="#22c55e" stroke-width="2"/><path d="M14 26l8 8 16-16" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p>გმადლობთ!<br>ჩვენი გუნდი მალე დაგიკავშირდებათ.</p>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+    <div class="header-inner">
+        <a href="index.html" class="header-logo" aria-label="შინდი — მთავარი">
+            <img src="Assests/Branding/logo.svg" alt="შინდი">
+        </a>
+        <span class="header-tagline">11 წელი ბიზნესების გვერდით</span>
+        <div class="header-actions">
+            <button class="hire-btn" data-hire aria-haspopup="dialog">გაგვესაუბრე <em class="arr">→</em></button>
+            <button class="burger-circle" id="mainBurger" aria-label="მენიუ" aria-expanded="false" aria-controls="navOverlay">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main id="pdMain">
+
+    <!-- ════ HERO ═════════════════════════════════════════════════ -->
+    <section class="pd-hero" id="pdHero" aria-label="პროექტი">
+        <img id="pdHeroImg" class="pd-hero-img" src="" alt="" loading="eager">
+        <div class="pd-hero-overlay" aria-hidden="true"></div>
+        <div class="pd-hero-content">
+            <!-- breadcrumb -->
+            <nav class="svc-breadcrumb" id="pdBreadcrumb" aria-label="breadcrumb">
+                <a href="index.html">მთავარი</a>
+                <span class="bc-sep">›</span>
+                <a href="portfolio.html">ნამუშევრები</a>
+                <span class="bc-sep">›</span>
+                <span id="pdBreadcrumbName">პროექტი</span>
+            </nav>
+            <span class="pd-hero-tag" id="pdHeroTag">სფერო</span>
+            <div class="pd-hero-name-row">
+                <img class="pd-hero-logo" id="pdHeroLogo" src="" alt="" style="display:none;">
+                <h1 class="pd-hero-company" id="pdHeroCompany">კომპანია</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════ INFO STRIP ══════════════════════════════════════════ -->
+    <div class="pd-info-strip" aria-label="პროექტის ინფო">
+        <div class="pd-info-inner pd-info-inner--2col">
+            <div class="pd-info-block">
+                <p class="pd-info-label">სფერო</p>
+                <p class="pd-info-value" id="pdIndustry">—</p>
+            </div>
+            <div class="pd-info-block">
+                <p class="pd-info-label">სერვისები</p>
+                <div class="pd-svc-pills" id="pdServices"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ DESCRIPTION ════════════════════════════════════════ -->
+    <section class="pd-desc-section reveal" aria-label="პროექტის აღწერა">
+        <div class="pd-desc-inner">
+            <div class="pd-desc-left">
+                <p class="pd-desc-label">პროექტის შესახებ</p>
+                <h2 class="pd-desc-heading" id="pdDescHeading">—</h2>
+                <p class="pd-desc-body" id="pdDescBody" style="margin-top:24px;">—</p>
+                <!-- Client logo + website -->
+                <div class="pd-client-row" id="pdClientRow" style="display:none; margin-top:32px;">
+                    <img class="pd-client-logo" id="pdClientLogo" src="" alt="" loading="lazy">
+                    <a class="pd-client-website" id="pdClientWebsite" href="#" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        <span id="pdClientWebsiteLabel">ვებგვერდის მონახულება</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pd-results" id="pdResults">
+                <!-- result items injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ════ GALLERY ════════════════════════════════════════════ -->
+    <section class="pd-gallery-section reveal" aria-label="პროექტის გალერეა">
+        <div class="pd-gallery-inner">
+            <div class="pd-gallery-hdr">
+                <p class="svc-sec-label" style="color:rgba(255,255,255,.3);">გალერეა</p>
+                <h2 class="svc-sec-title">ვიზუალური მასალა</h2>
+            </div>
+            <div class="pd-gallery-grid" id="pdGallery">
+                <!-- images injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ════ SIMILAR PROJECTS ══════════════════════════════════ -->
+    <section class="pd-similar-section reveal" aria-label="მსგავსი პროექტები">
+        <div class="pd-similar-inner">
+            <p class="svc-sec-label" style="color:var(--red);">სხვა ნამუშევრები</p>
+            <h2 class="svc-sec-title" id="pdSimilarTitle">მსგავსი პროექტები</h2>
+            <div class="pd-similar-grid" id="pdSimilarGrid">
+                <!-- cards injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ════ LEAD FORM ══════════════════════════════════════════ -->
+    <section class="svc-form-section reveal" aria-label="კონტაქტი">
+        <div class="svc-form-inner">
+            <div class="svc-form-hdr">
+                <h2 class="svc-form-title">მზად ხარ<br><em>წარმატებისთვის?</em></h2>
+                <p class="svc-form-sub">შეავსე ფორმა და მალე დაგიკავშირდებით უფასო კონსულტაციისთვის.</p>
+            </div>
+            <form id="pdLeadForm" action="#" method="POST" novalidate>
+                <input type="hidden" name="_hp" style="display:none" tabindex="-1" autocomplete="off">
+                <div class="svc-form-row">
+                    <label for="pd-name">სახელი *</label>
+                    <input class="svc-input" type="text" id="pd-name" name="name" placeholder="თქვენი სახელი" required autocomplete="name">
+                </div>
+                <div class="svc-form-row">
+                    <label for="pd-phone">ტელეფონი *</label>
+                    <input class="svc-input" type="tel" id="pd-phone" name="phone" placeholder="+995 5XX XX XX XX" required autocomplete="tel">
+                </div>
+                <div class="svc-form-row">
+                    <label for="pd-email">ელ-ფოსტა</label>
+                    <input class="svc-input" type="email" id="pd-email" name="email" placeholder="your@email.com" autocomplete="email">
+                </div>
+                <div class="svc-form-row">
+                    <label for="pd-service">სასურველი სერვისი</label>
+                    <select class="svc-input" id="pd-service" name="service">
+                        <option value="">— აირჩიეთ —</option>
+                        <option value="strategia">სტრატეგია</option>
+                        <option value="branding">ბრენდინგი</option>
+                        <option value="sheputva">შეფუთვა და დიზაინი</option>
+                        <option value="social-media">სოციალური მედია მარკეტინგი</option>
+                        <option value="seo">საძიებო სისტემის მარკეტინგი</option>
+                        <option value="website">ვებგვერდის დამზადება</option>
+                        <option value="app">მობილური აპლიკაცია</option>
+                        <option value="digitalizacia">ბიზნესის გაციფრულება</option>
+                    </select>
+                </div>
+                <div class="svc-form-row">
+                    <label for="pd-msg">შეტყობინება</label>
+                    <textarea class="svc-input" id="pd-msg" name="message" placeholder="მოგვიყევი პროექტის შესახებ…"></textarea>
+                </div>
+                <button type="submit" class="svc-form-submit">გაგზავნა →</button>
+            </form>
+            <div class="svc-form-ok" id="pdFormOk">
+                <svg viewBox="0 0 52 52" fill="none">
+                    <circle cx="26" cy="26" r="25" stroke="#22c55e" stroke-width="2"/>
+                    <path d="M14 26l8 8 16-16" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                გმადლობთ! ჩვენი გუნდი მალე დაგიკავშირდებათ.
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="footer">
+
+    <div class="footer-blob" aria-hidden="true"></div>
+
+    <div class="footer-cols">
+        <div class="footer-brand footer-col">
+            <h5>კონტაქტი</h5>
+            <ul>
+                <li><a href="tel:+995510102050">+995 510 10 20 50</a></li>
+                <li><a href="mailto:contact@shindi.ge">contact@shindi.ge</a></li>
+                <li><span>ზ. გორგილაძის ქ. 59, ბათუმი</span></li>
+                <li><a href="https://www.shindi.ge" target="_blank" rel="noopener">shindi.ge</a></li>
+            </ul>
+            <nav class="footer-socials" aria-label="სოციალური ქსელები">
+                <a href="https://www.facebook.com/shindi.ge" target="_blank" rel="noopener" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/shindi.ge" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/company/shindi/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+            </nav>
+        </div>
+
+        <div class="footer-col">
+            <h5>ნავიგაცია</h5>
+            <ul>
+                <li><a href="services.html">სერვისები</a></li>
+                <li><a href="portfolio.html">ნამუშევრები</a></li>
+                <li><a href="about.html">ჩვენ შესახებ</a></li>
+                <li><a href="blog.html">ბლოგი</a></li>
+                <li><a href="contact.html">კონტაქტი</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h5>სერვისები</h5>
+            <ul>
+                <li><a href="service.html?s=strategia">სტრატეგია</a></li>
+                <li><a href="service.html?s=branding">ბრენდინგი</a></li>
+                <li><a href="service.html?s=sheputva">შეფუთვა და დიზაინი</a></li>
+                <li><a href="service.html?s=social-media">სოციალური მედია</a></li>
+                <li><a href="service.html?s=seo">საძიებო სისტემის მარკეტინგი</a></li>
+                <li><a href="service.html?s=website">ვებგვერდის დამზადება</a></li>
+                <li><a href="service.html?s=app">მობილური აპლიკაცია</a></li>
+                <li><a href="service.html?s=digitalizacia">ბიზნესის გაციფრულება</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h5>დაგვიკავშირდი</h5>
+            <ul>
+                <li><a href="tel:+995510102050">+995 510 10 20 50</a></li>
+                <li><a href="mailto:contact@shindi.ge">contact@shindi.ge</a></li>
+                <li><a href="#" data-hire style="cursor:pointer;">გაგვესაუბრე →</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Logo + copyright + scroll-to-top -->
+    <div class="footer-end">
+        <a href="index.html" class="footer-end-logo" aria-label="შინდი">
+            <img src="Assests/Branding/logo.svg" alt="შინდი">
+        </a>
+        <div class="footer-end-right">
+            <span class="footer-tagline">ციფრული მარკეტინგი · ბათუმი · 2015</span>
+            <span class="footer-copy">&copy; <span id="year"></span> შინდი. ყველა უფლება დაცულია.</span>
+        </div>
+        <button class="scroll-top-btn" id="scrollTopBtn" aria-label="ზემოთ">
+            <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+
+</footer>
+
+<!-- GIFT MODAL -->
+<div id="giftModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="დაფინანსება">
+    <div class="modal-card">
+        <button class="modal-close-btn" id="giftClose" aria-label="დახურვა">✕</button>
+        <p class="modal-eyebrow">🎁 შენთვის საჩუქარი მაქვს</p>
+        <h2 class="modal-title">მიიღე 25 000 ლარიანი დაფინანსება<br>აწარმოე საქართველოს ფარგლებში!</h2>
+        <p class="modal-sub">შეავსე ფორმა და გაიგე როგორ მიიღო დაფინანსება:</p>
+        <form id="giftForm" action="#" method="POST" novalidate>
+            <input type="hidden" name="_hp" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="form-row">
+                <label for="g-name">სახელი *</label>
+                <input type="text" id="g-name" name="name" placeholder="თქვენი სახელი" required autocomplete="name">
+            </div>
+            <div class="form-row">
+                <label for="g-phone">ტელეფონი *</label>
+                <input type="tel" id="g-phone" name="phone" placeholder="+995 5XX XX XX XX" required autocomplete="tel">
+            </div>
+            <div class="form-row">
+                <label for="g-email">ელ-ფოსტა *</label>
+                <input type="email" id="g-email" name="email" placeholder="your@email.com" required autocomplete="email">
+            </div>
+            <div class="form-row">
+                <label for="g-web">კომპანიის ვებ / Facebook</label>
+                <input type="url" id="g-web" name="website" placeholder="https://...">
+            </div>
+            <div class="form-row">
+                <label for="g-revenue">კომპანიის ბრუნვა გასული 12 თვის განმავლობაში</label>
+                <select id="g-revenue" name="revenue">
+                    <option value="">— აირჩიეთ —</option>
+                    <option value="under-30k">30 000 ლარზე ნაკლები</option>
+                    <option value="under-500k">500 000 ლარზე ნაკლები</option>
+                    <option value="under-2mln">2 მლნ ლარზე ნაკლები</option>
+                    <option value="over-2mln">2 მლნ ლარზე მეტი</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">
+                <span class="btn-label">გაგზავნა</span>
+                <svg class="btn-spinner" viewBox="0 0 18 18" fill="none">
+                    <circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+                    <path d="M9 2a7 7 0 0 1 7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </form>
+        <div class="form-success" id="giftFormSuccess">
+            <svg viewBox="0 0 52 52" fill="none">
+                <circle cx="26" cy="26" r="25" stroke="#22c55e" stroke-width="2"/>
+                <path d="M14 26l8 8 16-16" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p>თქვენი მოთხოვნა მიღებულია.<br>მალე დაგიკავშირდებით.</p>
+        </div>
+    </div>
+</div>
+
+<!-- FLOATING GIFT BUTTON -->
+<button class="float-gift" data-gift aria-label="შენთვის საჩუქარი მაქვს">
+    <span class="gift-icon">🎁</span>
+    <span>შენთვის საჩუქარი მაქვს</span>
+</button>
+
+<!-- DATA -->
+<script src="js/portfolio-data.js"></script>
+
+<!-- PAGE LOGIC -->
+<script>
+(function () {
+    'use strict';
+
+    /* ── 1. Resolve id from URL ──────────────────────────────── */
+    const params = new URLSearchParams(location.search);
+    const slug   = params.get('p');
+
+    if (!slug) { location.replace('portfolio.html'); return; }
+
+    function initPage(portfolio) {
+        var proj = null;
+        for (var i = 0; i < portfolio.length; i++) {
+            if (String(portfolio[i].slug) === String(slug)) { proj = portfolio[i]; break; }
+        }
+        if (!proj) { location.replace('portfolio.html'); return; }
+        renderPage(proj, portfolio);
+    }
+
+    /* Wait for WordPress data */
+    if (window.SHINDI_PORTFOLIO_READY) {
+        initPage(window.SHINDI_PORTFOLIO);
+    } else {
+        document.addEventListener('shindiPortfolioReady', function(e) {
+            initPage(e.detail);
+        });
+    }
+
+    function renderPage(proj, SHINDI_PORTFOLIO) {
+
+    /* ── 2. Meta tags ────────────────────────────────────────── */
+    const pageTitle = proj.company + ' — შინდი';
+    document.getElementById('metaTitle').textContent   = pageTitle;
+    document.getElementById('metaDesc').content        = proj.shortDesc.slice(0, 155);
+    document.getElementById('metaCanon').href          = 'https://www.shindi.ge/portfolio-detail.html?p=' + slug;
+    document.getElementById('metaOgUrl').content       = 'https://www.shindi.ge/portfolio-detail.html?p=' + slug;
+    document.getElementById('metaOgTitle').content     = pageTitle;
+    document.getElementById('metaOgDesc').content      = proj.shortDesc.slice(0, 155);
+    document.getElementById('metaOgImg').content       = 'https://www.shindi.ge/' + proj.featured;
+    document.title = pageTitle;
+
+    /* ── 3. Hero ─────────────────────────────────────────────── */
+    const heroImg = document.getElementById('pdHeroImg');
+    heroImg.src = proj.featured;
+    heroImg.alt = proj.company;
+    document.getElementById('pdHeroTag').textContent       = proj.industryLabel;
+    document.getElementById('pdHeroCompany').textContent   = proj.company;
+    document.getElementById('pdBreadcrumbName').textContent = proj.company;
+
+    /* Client logo next to company name in hero */
+    if (proj.clientLogo) {
+        var heroLogo = document.getElementById('pdHeroLogo');
+        heroLogo.src   = proj.clientLogo;
+        heroLogo.alt   = proj.company + ' logo';
+        heroLogo.style.display = 'block';
+    }
+
+    /* ── 4. Info strip ───────────────────────────────────────── */
+    document.getElementById('pdIndustry').textContent = proj.industryLabel;
+
+    const pillsEl = document.getElementById('pdServices');
+    proj.services.forEach(function (svc, i) {
+        const a = document.createElement('a');
+        a.href      = 'service.html?s=' + svc;
+        a.className = 'pd-svc-pill';
+        a.textContent = proj.serviceLabels[i] || svc;
+        pillsEl.appendChild(a);
+    });
+
+    /* ── 5. Description + Results ───────────────────────────── */
+    document.getElementById('pdDescHeading').textContent = proj.company;
+    document.getElementById('pdDescBody').textContent    = proj.shortDesc;
+
+    /* Client logo + website */
+    var clientRow     = document.getElementById('pdClientRow');
+    var clientLogoEl  = document.getElementById('pdClientLogo');
+    var clientSiteEl  = document.getElementById('pdClientWebsite');
+    var clientLabelEl = document.getElementById('pdClientWebsiteLabel');
+    var hasLogo    = proj.clientLogo && proj.clientLogo.length > 0;
+    var hasWebsite = proj.website    && proj.website.length    > 0;
+
+    if (hasLogo || hasWebsite) {
+        clientRow.style.display = 'flex';
+        if (hasLogo) {
+            clientLogoEl.src = proj.clientLogo;
+            clientLogoEl.alt = proj.company + ' logo';
+        } else {
+            clientLogoEl.style.display = 'none';
+        }
+        if (hasWebsite) {
+            clientSiteEl.href = proj.website;
+            /* Show domain only */
+            try { clientLabelEl.textContent = new URL(proj.website).hostname.replace('www.',''); }
+            catch (e) { clientLabelEl.textContent = proj.website; }
+        } else {
+            clientSiteEl.style.display = 'none';
+        }
+    }
+
+    const resultsEl = document.getElementById('pdResults');
+    proj.results.forEach(function (r) {
+        const div = document.createElement('div');
+        div.className   = 'pd-result-item';
+        div.textContent = r;
+        resultsEl.appendChild(div);
+    });
+
+    /* ── 6. Gallery ──────────────────────────────────────────── */
+    var gallery = document.getElementById('pdGallery');
+    proj.images.forEach(function (src, i) {
+        var fig = document.createElement('figure');
+        fig.className = 'pd-gimg';
+        var img = document.createElement('img');
+        img.src     = src;
+        img.alt     = proj.company + ' — სურათი ' + (i + 1);
+        img.loading = i === 0 ? 'eager' : 'lazy';
+        fig.appendChild(img);
+        gallery.appendChild(fig);
+    });
+
+    /* ── 7. Lead form hidden subject ────────────────────────── */
+    document.getElementById('pdFormSubject').value =
+        'ლიდი — ' + proj.company + ' (portfolio-detail)';
+
+    /* ── 8. Lead form submit ─────────────────────────────────── */
+    var leadForm = document.getElementById('pdLeadForm');
+    var formOk   = document.getElementById('pdFormOk');
+    leadForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name  = document.getElementById('pd-name').value.trim();
+        var phone = document.getElementById('pd-phone').value.trim();
+        if (!name || !phone) {
+            alert('გთხოვთ, შეავსოთ სავალდებულო ველები (სახელი და ტელეფონი).');
+            return;
+        }
+        var btn = leadForm.querySelector('.svc-form-submit');
+        btn.textContent = 'იგზავნება…';
+        btn.disabled = true;
+
+        fetch(leadForm.action, {
+            method:  'POST',
+            body:    new FormData(leadForm),
+            headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+            if (res.ok) {
+                leadForm.style.display = 'none';
+                formOk.classList.add('show');
+            } else {
+                btn.textContent = 'გაგზავნა →';
+                btn.disabled = false;
+                window.location.href = 'mailto:contact@shindi.ge?subject=' +
+                    encodeURIComponent(document.getElementById('pdFormSubject').value) +
+                    '&body=' + encodeURIComponent(name + '\n' + phone);
+            }
+        }).catch(function () {
+            btn.textContent = 'გაგზავნა →';
+            btn.disabled = false;
+            window.location.href = 'mailto:contact@shindi.ge?subject=' +
+                encodeURIComponent(document.getElementById('pdFormSubject').value) +
+                '&body=' + encodeURIComponent(name + '\n' + phone);
+        });
+    });
+
+    /* ── 9. Similar projects ─────────────────────────────────── */
+    var similar = SHINDI_PORTFOLIO.filter(function (p) {
+        if (p.slug === slug) return false;
+        // same industry first, then overlap in services
+        if (p.industry === proj.industry) return true;
+        return p.services.some(function (s) { return proj.services.includes(s); });
+    }).slice(0, 3);
+
+    // If we couldn't fill 3, pad with any other projects
+    if (similar.length < 3) {
+        SHINDI_PORTFOLIO.forEach(function (p) {
+            if (similar.length >= 3) return;
+            if (p.slug === slug) return;
+            if (similar.find(function (s) { return s.slug === p.slug; })) return;
+            similar.push(p);
+        });
+    }
+
+    var simGrid = document.getElementById('pdSimilarGrid');
+    similar.forEach(function (p) {
+        var card = document.createElement('a');
+        card.href      = 'portfolio-detail.html?p=' + p.slug;
+        card.className = 'port-card';
+        card.setAttribute('data-industry', p.industry);
+        card.setAttribute('data-services', p.services.join(' '));
+        card.innerHTML =
+            '<img class="port-card-img" src="' + p.featured + '" alt="' + p.company + '" loading="lazy">' +
+            '<span class="port-card-tag">' + p.industryLabel + '</span>' +
+            '<span class="port-card-arrow" aria-hidden="true">↗</span>' +
+            '<div class="port-card-overlay">' +
+                '<p class="port-card-company">' + p.company + '</p>' +
+                '<div class="port-card-services">' +
+                    p.serviceLabels.map(function (l) {
+                        return '<span class="port-card-svc">' + l + '</span>';
+                    }).join('') +
+                '</div>' +
+            '</div>';
+        simGrid.appendChild(card);
+    });
+
+    if (similar.length === 0) {
+        var all = document.createElement('p');
+        all.style.cssText = 'color:rgba(0,0,0,.35);font-size:15px;';
+        all.innerHTML = '<a href="portfolio.html" style="color:var(--red);">ყველა ნამუშევარი →</a>';
+        simGrid.appendChild(all);
+    }
+
+    /* ── 10. Similar section heading ────────────────────────── */
+    document.getElementById('pdSimilarTitle').textContent =
+        proj.industryLabel + ' — სხვა პროექტები';
+
+    /* ── 11. Scroll reveal ───────────────────────────────────── */
+    if ('IntersectionObserver' in window) {
+        var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(function (el) {
+            revealObs.observe(el);
+        });
+    } else {
+        document.querySelectorAll('.reveal').forEach(function (el) {
+            el.classList.add('visible');
+        });
+    }
+
+    } // end renderPage
+
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     QUIZ POPUP MODAL
+════════════════════════════════════════════════════════════ -->
+<div id="quizModal" class="quiz-backdrop" role="dialog" aria-modal="true" aria-label="უფასო კონსულტაცია">
+    <div class="quiz-card">
+
+        <!-- Close -->
+        <button class="quiz-close" id="quizClose" aria-label="დახურვა">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <!-- Star progress -->
+        <div class="quiz-stars" aria-label="პროგრესი">
+            <span class="quiz-star" aria-hidden="true">★</span>
+            <span class="quiz-star" aria-hidden="true">★</span>
+            <span class="quiz-star" aria-hidden="true">★</span>
+            <span class="quiz-star" aria-hidden="true">★</span>
+            <span class="quiz-star" aria-hidden="true">★</span>
+        </div>
+
+        <p class="quiz-headline">უპასუხე რამოდენიმე შეკითხვას და მიიღე<br><strong>უფასო კონსულტაცია</strong></p>
+
+        <!-- ── STEP 1 ── სფერო (single choice) -->
+        <div class="quiz-step active" data-step="1">
+            <p class="quiz-q"><span class="quiz-step-num">1 / 5</span> რომელ სფეროს წარმოადგენთ?</p>
+            <div class="qc-grid">
+                <button class="qc-btn qc-single" data-val="უძრავი ქონება"><span class="qc-ind"></span><span class="qc-label">🏠 უძრავი ქონება</span></button>
+                <button class="qc-btn qc-single" data-val="ტურიზმი"><span class="qc-ind"></span><span class="qc-label">✈️ ტურიზმი</span></button>
+                <button class="qc-btn qc-single" data-val="ვაჭრობა"><span class="qc-ind"></span><span class="qc-label">🛍️ ვაჭრობა</span></button>
+                <button class="qc-btn qc-single" data-val="მომსახურება"><span class="qc-ind"></span><span class="qc-label">💼 მომსახურება</span></button>
+                <button class="qc-btn qc-single qc-other-trigger" data-val="სხვა"><span class="qc-ind"></span><span class="qc-label">✏️ სხვა</span></button>
+            </div>
+            <input class="quiz-other-field" type="text" placeholder="მიუთითე სფერო..." style="display:none">
+            <button class="quiz-next-btn" style="display:none">შემდეგი →</button>
+        </div>
+
+        <!-- ── STEP 2 ── სერვისი (single choice) -->
+        <div class="quiz-step" data-step="2">
+            <button class="quiz-back-btn" data-back>← უკან</button>
+            <p class="quiz-q"><span class="quiz-step-num">2 / 5</span> რომელი სერვისი გესაჭიროებათ?</p>
+            <div class="qc-grid">
+                <button class="qc-btn qc-single" data-val="სტრატეგია"><span class="qc-ind"></span><span class="qc-label">📊 სტრატეგია</span></button>
+                <button class="qc-btn qc-single" data-val="ბრენდინგი"><span class="qc-ind"></span><span class="qc-label">🎨 ბრენდინგი</span></button>
+                <button class="qc-btn qc-single" data-val="სოც. მედია"><span class="qc-ind"></span><span class="qc-label">📱 სოც. მედია</span></button>
+                <button class="qc-btn qc-single" data-val="ვებგვერდი"><span class="qc-ind"></span><span class="qc-label">🌐 ვებგვერდი</span></button>
+                <button class="qc-btn qc-single" data-val="აპლიკაცია"><span class="qc-ind"></span><span class="qc-label">📲 აპლიკაცია</span></button>
+                <button class="qc-btn qc-single" data-val="ყველა"><span class="qc-ind"></span><span class="qc-label">✨ ყველა</span></button>
+            </div>
+            <button class="quiz-next-btn" style="display:none">შემდეგი →</button>
+        </div>
+
+        <!-- ── STEP 3 ── კომპანია -->
+        <div class="quiz-step" data-step="3">
+            <button class="quiz-back-btn" data-back>← უკან</button>
+            <p class="quiz-q"><span class="quiz-step-num">3 / 5</span> თქვენი კომპანიის დასახელება ან ბმული</p>
+            <input class="quiz-input" type="text" placeholder="სახელი, Facebook ბმული ან ვებგვერდი" autocomplete="off" required>
+            <p class="quiz-field-err" style="display:none">⚠ გთხოვთ შეავსოთ ეს ველი</p>
+            <button class="quiz-next-btn">შემდეგი →</button>
+        </div>
+
+        <!-- ── STEP 4 ── ტელეფონი -->
+        <div class="quiz-step" data-step="4">
+            <button class="quiz-back-btn" data-back>← უკან</button>
+            <p class="quiz-q"><span class="quiz-step-num">4 / 5</span> მიუთითეთ თქვენი ტელეფონი</p>
+            <input class="quiz-input" type="tel" placeholder="510 10 20 50" autocomplete="tel" required>
+            <p class="quiz-field-err" style="display:none">⚠ გთხოვთ შეიყვანოთ ტელეფონის ნომერი</p>
+            <button class="quiz-next-btn">შემდეგი →</button>
+        </div>
+
+        <!-- ── STEP 5 ── მოლოდინი (single choice) -->
+        <div class="quiz-step" data-step="5">
+            <button class="quiz-back-btn" data-back>← უკან</button>
+            <p class="quiz-q"><span class="quiz-step-num">5 / 5</span> როგორი მომსახურების მოლოდინი გაქვთ?</p>
+            <div class="qc-grid qc-grid--col1">
+                <button class="qc-btn qc-single" data-val="სწრაფად, იაფად და ხარისხიანად"><span class="qc-ind"></span><span class="qc-label">⚡ სწრაფად, იაფად და ხარისხიანად</span></button>
+                <button class="qc-btn qc-single" data-val="თანადაფინანსებით (აწარმოე საქართველოში)"><span class="qc-ind"></span><span class="qc-label">🤝 თანადაფინანსებით (აწარმოე საქართველოში)</span></button>
+                <button class="qc-btn qc-single" data-val="მხოლოდ პრემიუმ ხარისხით"><span class="qc-ind"></span><span class="qc-label">💎 მხოლოდ პრემიუმ ხარისხით</span></button>
+            </div>
+        </div>
+
+        <!-- ── SUCCESS SCREEN ── -->
+        <div class="quiz-success" id="quizSuccess">
+            <div class="quiz-success-stars">
+                <span class="qs-star">★</span>
+                <span class="qs-star">★</span>
+                <span class="qs-star">★</span>
+                <span class="qs-star">★</span>
+                <span class="qs-star">★</span>
+            </div>
+            <p class="quiz-success-msg">წარმატება გზაშია,<br>ჩვენი მენეჯერი მალე დაგიკავშირდებათ</p>
+            <button class="quiz-success-close" id="quizSuccessClose">დახურვა</button>
+        </div>
+
+    </div><!-- /.quiz-card -->
+</div><!-- /#quizModal -->
+
+<!-- SITE JS (loader, header, modals, etc.) -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
+
+

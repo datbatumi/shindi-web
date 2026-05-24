@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>მადლობა - შინდი</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="Assests/Branding/logo.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .submitted-wrap {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            gap: 1.5rem;
+        }
+        .submitted-wrap img { width: 120px; }
+        .submitted-wrap svg { color: #22c55e; }
+        .submitted-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin: 0;
+        }
+        .submitted-sub {
+            color: var(--text-muted, #888);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .submitted-back {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            margin-top: .5rem;
+            padding: .75rem 1.75rem;
+            background: #E42C42;
+            color: #fff;
+            border-radius: 100px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity .2s;
+        }
+        .submitted-back:hover { opacity: .85; }
+    </style>
+</head>
+<body>
+
+<div class="submitted-wrap">
+    <img src="Assests/Branding/logo.svg" alt="შინდი">
+
+    <svg viewBox="0 0 64 64" fill="none" width="72" height="72">
+        <circle cx="32" cy="32" r="31" stroke="currentColor" stroke-width="2"/>
+        <path d="M18 32l10 10 18-18" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <h1 class="submitted-title">მადლობა!</h1>
+    <p class="submitted-sub">თქვენი მოთხოვნა მიღებულია.<br>ჩვენი გუნდი მალე დაგიკავშირდებათ.</p>
+
+    <a href="index.html" class="submitted-back">მთავარ გვერდზე დაბრუნება →</a>
+</div>
+
+</body>
+</html>

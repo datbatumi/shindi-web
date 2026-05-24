@@ -1,0 +1,2 @@
+Primary: #E42C42
+Secondary: #1E1E1E, #FFFFFF, #506FFC
