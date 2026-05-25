@@ -52,7 +52,7 @@ button { cursor: pointer; font-family: var(--font); border: none; background: no
 }
 .loader-logo-img {
     height: 54px; width: auto;
-    animation: loaderLogoReveal .7s cubic-bezier(.34,1.56,.64,1) both;
+    animation: loaderLogoReveal .7s cubic-bezier(.25,.46,.45,.94) both;
 }
 @keyframes loaderLogoReveal {
     from { opacity: 0; transform: translateY(14px); }
