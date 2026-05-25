@@ -1,0 +1,14 @@
+# WordPress backend — managed separately, not part of the static frontend repo
+sadmin/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+
+# Sensitive files
+pass - forms.txt
+*.env
+.env*
