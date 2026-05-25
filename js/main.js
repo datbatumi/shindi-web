@@ -538,8 +538,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 (function () {
     const el = document.getElementById('blogWord');
     if (!el) return;
-    const words = ['უახლეს სტატიებს', 'ტენდენციებს მარკეტინგში', 'ინოვაციებს ტექნოლოგიებში', 'ექსპერტულ რჩევებს'];
+    let words = ['უახლეს სტატიებს', 'ტენდენციებს', 'ექსპერტულ რჩევებს', 'სიახლეებს'];
     let wordIdx = 0;
+
+    window._blogTypewriterUpdate = function (newWords) {
+        if (Array.isArray(newWords) && newWords.length) words = newWords;
+    };
 
     function type(word, done) {
         el.textContent = '';

@@ -383,35 +383,15 @@
 (function () {
     'use strict';
 
-    /* ── Hero word cycling ── */
-    var BLOG_WORD_FALLBACK = ['სიახლეებს', 'ტენდენციებს', 'რჩევებს', 'სტატიებს'];
-
-    function startBlogWordCycle(words) {
-        if (!words || !words.length) return;
-        var el  = document.getElementById('blogWord');
-        var idx = 0;
-        el.textContent = words[0];
-        setInterval(function () {
-            el.style.opacity   = '0';
-            el.style.transform = 'translateY(-8px)';
-            setTimeout(function () {
-                idx = (idx + 1) % words.length;
-                el.textContent     = words[idx];
-                el.style.opacity   = '1';
-                el.style.transform = 'translateY(0)';
-            }, 300);
-        }, 2500);
-    }
-
+    /* ── Hero word cycling — WP words injected into main.js typewriter ── */
     window.onHomepageReady(function (data) {
         var beforeEl = document.getElementById('blogHeroBefore');
         if (data && data.blogHeroBefore && beforeEl) {
             beforeEl.textContent = data.blogHeroBefore;
         }
-        var words = (data && data.blogHeroWords && data.blogHeroWords.length)
-            ? data.blogHeroWords
-            : BLOG_WORD_FALLBACK;
-        startBlogWordCycle(words);
+        if (data && data.blogHeroWords && data.blogHeroWords.length && window._blogTypewriterUpdate) {
+            window._blogTypewriterUpdate(data.blogHeroWords);
+        }
     });
 
     function initPage(SHINDI_BLOG) {
