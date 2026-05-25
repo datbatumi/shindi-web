@@ -1,6 +1,9 @@
 # WordPress backend — managed separately, not part of the static frontend repo
 sadmin/
 
+# Claude Code local config — never deploy these
+.claude/
+
 # OS / editor junk
 .DS_Store
 Thumbs.db
@@ -8,7 +11,7 @@ desktop.ini
 *.swp
 *.swo
 
-# Sensitive files
+# Sensitive / local-only files
 pass - forms.txt
 *.env
 .env*
