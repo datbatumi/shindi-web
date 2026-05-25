@@ -69,6 +69,7 @@
             id         : post.id,
             slug       : post.slug,
             title      : post.title.rendered,
+            content    : post.content ? post.content.rendered : '',
             category   : cat.slug,
             catLabel   : acf.cat_label  || cat.name,
             excerpt    : excerpt,

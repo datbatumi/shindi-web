@@ -449,7 +449,7 @@
     document.getElementById('metaDesc').content        = post.excerpt;
     document.getElementById('metaOgTitle').content     = fullTitle;
     document.getElementById('metaOgDesc').content      = post.excerpt;
-    document.getElementById('metaOgImg').content       = 'https://www.shindi.ge/' + post.featured;
+    document.getElementById('metaOgImg').content       = post.featured || 'https://www.shindi.ge/Assests/Branding/og-image.png';
     var canon = 'https://www.shindi.ge/blog-single.html?p=' + post.slug;
     document.getElementById('metaCanon').href          = canon;
     document.getElementById('metaOgUrl').content       = canon;
@@ -467,35 +467,45 @@
     var bodyEl = document.getElementById('bsBody');
     var tocEl  = document.getElementById('bsToc');
 
-    post.body.forEach(function (para, i) {
-        /* Generate a mini heading from first sentence */
-        var firstSentence = para.split('—')[0].split('.')[0].trim();
-        var shortHead = firstSentence.length > 60
-            ? firstSentence.substring(0, 55) + '...'
-            : firstSentence;
-        var headId = 'bs-p-' + i;
-
-        /* Heading */
-        var h3 = document.createElement('h3');
-        h3.className = 'bs-body-heading';
-        h3.id = headId;
-        h3.textContent = (i + 1) + '. ' + shortHead;
-        bodyEl.appendChild(h3);
-
-        /* Paragraph */
-        var p = document.createElement('p');
-        p.className = 'bs-body-para';
-        p.textContent = para;
-        bodyEl.appendChild(p);
-
-        /* TOC entry */
-        var li = document.createElement('li');
-        var a  = document.createElement('a');
-        a.href = '#' + headId;
-        a.textContent = (i + 1) + '. ' + shortHead;
-        li.appendChild(a);
-        tocEl.appendChild(li);
-    });
+    if (post.content) {
+        /* WP native content.rendered — supports full block editor output */
+        bodyEl.innerHTML = post.content;
+        /* Build TOC from headings in rendered content */
+        var headings = bodyEl.querySelectorAll('h2, h3');
+        headings.forEach(function (h, i) {
+            if (!h.id) h.id = 'bs-h-' + i;
+            var li = document.createElement('li');
+            var a  = document.createElement('a');
+            a.href = '#' + h.id;
+            a.textContent = h.textContent;
+            li.appendChild(a);
+            tocEl.appendChild(li);
+        });
+    } else if (post.body && post.body.length) {
+        /* Fallback: ACF body_paragraphs repeater (ACF Pro) */
+        post.body.forEach(function (para, i) {
+            var firstSentence = para.split('—')[0].split('.')[0].trim();
+            var shortHead = firstSentence.length > 60
+                ? firstSentence.substring(0, 55) + '...'
+                : firstSentence;
+            var headId = 'bs-p-' + i;
+            var h3 = document.createElement('h3');
+            h3.className = 'bs-body-heading';
+            h3.id = headId;
+            h3.textContent = (i + 1) + '. ' + shortHead;
+            bodyEl.appendChild(h3);
+            var p = document.createElement('p');
+            p.className = 'bs-body-para';
+            p.textContent = para;
+            bodyEl.appendChild(p);
+            var li = document.createElement('li');
+            var a  = document.createElement('a');
+            a.href = '#' + headId;
+            a.textContent = (i + 1) + '. ' + shortHead;
+            li.appendChild(a);
+            tocEl.appendChild(li);
+        });
+    }
 
     /* ── Tags (clickable — link to blog.html?cat=tag) ── */
     var tagsEl = document.getElementById('bsTags');

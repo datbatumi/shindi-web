@@ -657,6 +657,24 @@ function shindi_register_acf_field_groups() {
                 'type'         => 'text',
                 'instructions' => 'მაგ: 500+ წარმატებული პროექტი - სტრატეგია, ბრენდინგი, SMM, SEO, ვებგვერდი, ტარგეტირება.',
             ],
+            /* ── Blog page hero ── */
+            [
+                'key'          => 'field_home_blog_before',
+                'label'        => 'ბლოგი — სათაური (typewriter-მდე)',
+                'name'         => 'blog_hero_before',
+                'type'         => 'text',
+                'instructions' => 'მაგ: გაეცანით',
+                'wrapper'      => [ 'width' => '40' ],
+            ],
+            [
+                'key'          => 'field_home_blog_words',
+                'label'        => 'ბლოგი — typewriter სიტყვები (ერთი სტრიქონი = ერთი სიტყვა)',
+                'name'         => 'blog_hero_words',
+                'type'         => 'textarea',
+                'rows'         => 4,
+                'instructions' => "თითოეული სიტყვა ახალ სტრიქონზე. მაგ:\nსიახლეებს\nტენდენციებს\nრჩევებს\nსტატიებს",
+                'wrapper'      => [ 'width' => '60' ],
+            ],
         ],
         'location' => [
             [ [ 'param' => 'post_type', 'operator' => '==', 'value' => 'homepage' ] ],

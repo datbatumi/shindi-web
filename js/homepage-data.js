@@ -53,6 +53,15 @@
                 .filter(function (w) { return w.length > 0; });
         }
 
+        /* blog_hero_words is a textarea — split on newlines */
+        var blogWords = [];
+        if (acf.blog_hero_words) {
+            blogWords = String(acf.blog_hero_words)
+                .split('\n')
+                .map(function (w) { return w.trim(); })
+                .filter(function (w) { return w.length > 0; });
+        }
+
         return {
             heroLine1        : acf.hero_line_1        || '',
             heroLine2        : acf.hero_line_2        || '',
@@ -79,6 +88,8 @@
                     .filter(function (w) { return w.length > 0; });
             }()),
             portfolioHeroDesc   : acf.portfolio_hero_desc || '',
+            blogHeroBefore      : acf.blog_hero_before || '',
+            blogHeroWords       : blogWords,
         };
     }
 

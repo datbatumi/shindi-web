@@ -121,7 +121,7 @@
         <div class="pg-hero-inner">
             <span class="pg-tag">ბლოგი · ციფრული მარკეტინგი</span>
             <h1 class="pg-title">
-                გაეცანით<br>
+                <span id="blogHeroBefore">გაეცანით</span><br>
                 <span class="t-red" id="blogWord">სიახლეებს</span>
             </h1>
         </div>
@@ -376,11 +376,43 @@
     </div><!-- /.quiz-card -->
 </div><!-- /#quizModal -->
 
+<script src="js/homepage-data.js"></script>
 <script src="js/blog-data.js"></script>
 <script src="js/main.js"></script>
 <script>
 (function () {
     'use strict';
+
+    /* ── Hero word cycling ── */
+    var BLOG_WORD_FALLBACK = ['სიახლეებს', 'ტენდენციებს', 'რჩევებს', 'სტატიებს'];
+
+    function startBlogWordCycle(words) {
+        if (!words || !words.length) return;
+        var el  = document.getElementById('blogWord');
+        var idx = 0;
+        el.textContent = words[0];
+        setInterval(function () {
+            el.style.opacity   = '0';
+            el.style.transform = 'translateY(-8px)';
+            setTimeout(function () {
+                idx = (idx + 1) % words.length;
+                el.textContent     = words[idx];
+                el.style.opacity   = '1';
+                el.style.transform = 'translateY(0)';
+            }, 300);
+        }, 2500);
+    }
+
+    window.onHomepageReady(function (data) {
+        var beforeEl = document.getElementById('blogHeroBefore');
+        if (data && data.blogHeroBefore && beforeEl) {
+            beforeEl.textContent = data.blogHeroBefore;
+        }
+        var words = (data && data.blogHeroWords && data.blogHeroWords.length)
+            ? data.blogHeroWords
+            : BLOG_WORD_FALLBACK;
+        startBlogWordCycle(words);
+    });
 
     function initPage(SHINDI_BLOG) {
     var GRID_PER_PAGE = 4;

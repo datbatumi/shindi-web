@@ -474,7 +474,7 @@ button { cursor: pointer; font-family: var(--font); border: none; background: no
     margin-left: 4px; font-weight: 400;
     animation: cursorBlink .7s step-end infinite;
 }
-#blogWord { display: inline-block; }
+#blogWord { display: inline-block; transition: opacity .3s ease, transform .3s ease; }
 #blogWord::after {
     content: '|'; display: inline-block; color: var(--red);
     margin-left: 4px; font-weight: 400;
