@@ -403,7 +403,7 @@
     var featured = SHINDI_BLOG[0];
     var featEl   = document.getElementById('blogFeatured');
     featEl.innerHTML =
-        '<a class="blog-feat-card" href="blog-single.html?p=' + featured.slug + '">' +
+        '<a class="blog-feat-card" href="blog-single.html?id=' + featured.id + '">' +
             '<div class="blog-feat-img-wrap">' +
                 '<img src="' + featured.featured + '" alt="' + featured.title + '" loading="eager">' +
             '</div>' +
@@ -432,7 +432,7 @@
         page.forEach(function (post) {
             var card = document.createElement('a');
             card.className = 'blog-card';
-            card.href = 'blog-single.html?p=' + post.slug;
+            card.href = 'blog-single.html?id=' + post.id;
             card.innerHTML =
                 '<div class="blog-card-img-wrap">' +
                     '<img src="' + post.featured + '" alt="' + post.title + '" loading="lazy">' +

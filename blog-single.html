@@ -434,8 +434,8 @@
 
     function initPage(SHINDI_BLOG) {
     var params = new URLSearchParams(window.location.search);
-    var slug   = params.get('p') || '';
-    var post   = SHINDI_BLOG.find(function (p) { return p.slug === slug; });
+    var postId = parseInt(params.get('id'), 10) || 0;
+    var post   = SHINDI_BLOG.find(function (p) { return p.id === postId; });
 
     if (!post) {
         window.location.replace('blog.html');
@@ -450,7 +450,7 @@
     document.getElementById('metaOgTitle').content     = fullTitle;
     document.getElementById('metaOgDesc').content      = post.excerpt;
     document.getElementById('metaOgImg').content       = post.featured || 'https://www.shindi.ge/Assests/Branding/og-image.png';
-    var canon = 'https://www.shindi.ge/blog-single.html?p=' + post.slug;
+    var canon = 'https://www.shindi.ge/blog-single.html?id=' + post.id;
     document.getElementById('metaCanon').href          = canon;
     document.getElementById('metaOgUrl').content       = canon;
 
@@ -552,7 +552,7 @@
     related.forEach(function (rp) {
         var card = document.createElement('a');
         card.className = 'blog-card';
-        card.href = 'blog-single.html?p=' + rp.slug;
+        card.href = 'blog-single.html?id=' + rp.id;
         card.innerHTML =
             '<div class="blog-card-img-wrap">' +
                 '<img src="' + rp.featured + '" alt="' + rp.title + '" loading="lazy">' +
