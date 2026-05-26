@@ -346,6 +346,14 @@ function shindi_register_acf_field_groups() {
                 'wrapper'      => [ 'width' => '50' ],
             ],
             [
+                'key'          => 'field_blog_card_desc',
+                'label'        => 'მოკლე აღწერა (ბარათზე)',
+                'name'         => 'card_description',
+                'type'         => 'textarea',
+                'rows'         => 2,
+                'instructions' => 'სტატიის მოკლე შინაარსი — ჩნდება ბლოგის სიაში ბარათზე. მაქს. 1-2 წინადადება.',
+            ],
+            [
                 'key'   => 'field_blog_intro',
                 'label' => 'შესავალი (intro)',
                 'name'  => 'intro',

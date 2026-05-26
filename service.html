@@ -506,10 +506,13 @@
 <script>
 (function () {
     function initPage(SHINDI_SERVICES) {
-    /* ── Resolve which service to show ── */
+    /* ── Resolve which service to show — supports ?id=POST_ID and ?s=slug ── */
     const params = new URLSearchParams(window.location.search);
     const id     = parseInt(params.get('id') || '0', 10);
-    const svc    = SHINDI_SERVICES.find(s => s.id === id);
+    const slug   = params.get('s') || '';
+    const svc    = id
+        ? SHINDI_SERVICES.find(s => s.id === id)
+        : SHINDI_SERVICES.find(s => s.slug === slug);
 
     if (!svc) {
         document.getElementById('svcShort').textContent = 'სერვისი ვერ მოიძებნა.';
@@ -532,8 +535,6 @@
     document.getElementById('metaOgUrl').content      = canonical;
 
     /* Pre-select this service in hire modal */
-    document.getElementById('formSubject').value = 'შეკითხვა — ' + svc.title + ' — Shindi.ge';
-    document.getElementById('leadSubject').value = 'ლიდი — ' + svc.title + ' — Shindi.ge';
     const sel = document.getElementById('h-service');
     for (let o of sel.options) {
         if (o.text.indexOf(svc.title.substring(0,5)) !== -1) { o.selected = true; break; }

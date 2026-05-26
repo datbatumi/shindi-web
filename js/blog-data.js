@@ -62,8 +62,10 @@
 
         var dateISO = post.date.substring(0, 10);
 
-        /* Strip WP's auto-added <p> tags from excerpt */
-        var excerpt = (post.excerpt.rendered || '').replace(/<[^>]+>/g, '').trim();
+        /* card_description ACF field takes priority; fall back to native WP excerpt */
+        var excerpt = (acf.card_description || '')
+            .trim()
+            || (post.excerpt.rendered || '').replace(/<[^>]+>/g, '').trim();
 
         return {
             id         : post.id,
